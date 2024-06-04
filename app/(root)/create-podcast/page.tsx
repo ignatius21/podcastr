@@ -99,7 +99,7 @@ const CreatePodcast = () => {
                     <Input
                       placeholder="Ignacio Podcast"
                       {...field}
-                      className="input-class"
+                      className="input-class focus:ring-offset-orange-1"
                     />
                   </FormControl>
                   <FormMessage className="text-white-1" />
@@ -121,7 +121,7 @@ const CreatePodcast = () => {
                   className="placeholder-gray-1"
                 />
               </SelectTrigger>
-              <SelectContent className="text-16 border-none bg-black-1 font-bold text-white-1 focus:ring-orange-1">
+              <SelectContent className="text-16 border-none bg-black-1 font-bold text-white-1 focus:ring-offset-orange-1">
                 {voiceCategory.map((voice) => (
                   <SelectItem
                     key={voice}
@@ -148,7 +148,7 @@ const CreatePodcast = () => {
                     <Textarea
                       placeholder="Provide text to AI to generate audio"
                       {...field}
-                      className="input-class "
+                      className="input-class focus:ring-offset-orange-1"
                     />
                   </FormControl>
                   <FormMessage className="text-white-1" />
@@ -157,7 +157,16 @@ const CreatePodcast = () => {
             />
           </div>
           <div className="flex flex-col pt-10">
-            <GeneratePodcast />
+            <GeneratePodcast
+              setAudioStorageId={setAudioStorageId}
+              setAudioUrl={setAudioUrl}
+              voiceType={voiceType}
+              audio={audioUrl}
+              voicePrompt={voicePrompt}
+              setVoicePrompt={setVoicePrompt}
+              setAudioDuration={setAudioDuration}
+            />
+
             <GenerateThumbnail />
             <div className="mt-10 w-full">
               <Button className="text-16 w-full bg-orange-1 py-4 font-extrabold text-white-1 transition-all duration-700 hover:bg-black-1 hover:text-orange-1">
