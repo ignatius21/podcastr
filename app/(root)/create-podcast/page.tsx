@@ -160,7 +160,7 @@ const CreatePodcast = () => {
             <GeneratePodcast />
             <GenerateThumbnail />
             <div className="mt-10 w-full">
-              <Button className="text-16 w-full bg-orange-1 py-4 font-extrabold text-white-1 transition-all duration-500 hover:bg-black-1">
+              <Button className="text-16 w-full bg-orange-1 py-4 font-extrabold text-white-1 transition-all duration-700 hover:bg-black-1 hover:text-orange-1">
                 {isSubmitting ? (
                   <>
                   <Loader className="animate-spin mr-1" size={30} /> 
