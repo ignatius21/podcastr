@@ -54,7 +54,7 @@ const CreatePodcast = () => {
   const [audioDuration, setAudioDuration] = useState(0)
 
   // voice
-  const [voiceType, setVoiceType] = useState<string | null>(null);
+  const [voiceType, setVoiceType] = useState<string | null >(null);
   const [voicePrompt, setVoicePrompt] = useState('')
   
   
@@ -159,12 +159,13 @@ const CreatePodcast = () => {
           <div className="flex flex-col pt-10">
             <GeneratePodcast
               setAudioStorageId={setAudioStorageId}
-              setAudioUrl={setAudioUrl}
-              voiceType={voiceType}
+              setAudio={setAudioUrl}
+              voiceType={voiceType!}
               audio={audioUrl}
               voicePrompt={voicePrompt}
               setVoicePrompt={setVoicePrompt}
               setAudioDuration={setAudioDuration}
+              setAudioUrl={setAudioUrl}
             />
 
             <GenerateThumbnail />
@@ -172,13 +173,11 @@ const CreatePodcast = () => {
               <Button className="text-16 w-full bg-orange-1 py-4 font-extrabold text-white-1 transition-all duration-700 hover:bg-black-1 hover:text-orange-1">
                 {isSubmitting ? (
                   <>
-                  <Loader className="animate-spin mr-1" size={30} /> 
-                  Submitting
+                    <Loader className="animate-spin mr-1" size={30} />
+                    Submitting
                   </>
                 ) : (
-                  <>
-                  Submit and publish podcast
-                  </>
+                  <>Submit and publish podcast</>
                 )}
               </Button>
             </div>
